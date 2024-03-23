@@ -4,17 +4,17 @@
     "recipes": [
       {
         "name": "Margherita Pizza",
-        "image": "Margherita",
+        "image": "/homepage_images/Margherita Pizza.jpg",
         "description": "A classic vegetarian Italian pizza with tomato sauce, fresh mozzarella, basil, and olive oil. This pizza is known for its simplicity and the vibrant flavors of its fresh ingredients."
       },
       {
         "name": "Spaghetti Aglio e Olio",
-        "image": "Spaghetti",
+        "image": "/homepage_images/Spaghetti Aglio e Olio.jpg",
         "description": "A vegetarian pasta dish with garlic, olive oil, red pepper flakes, and parsley. Simple yet flavorful."
       },
       {
         "name": "Tiramisu",
-        "image": "Tiramisu",
+        "image": "/homepage_images/Tiramisu.jpg",
         "description": "A delightful Italian vegetarian dessert with layers of coffee-soaked ladyfingers and mascarpone cheese. Tiramisu is a sweet and creamy treat that's perfect for the end of a meal."
       }
     ]
@@ -24,17 +24,17 @@
     "recipes": [
       {
         "name": "Paneer Tikka Masala",
-        "image": "Paneer",
+        "image": "/homepage_images/Paneer Tikka Masala.png",
         "description": "Tender paneer (cottage cheese) in a tomato-based sauce with aromatic spices. Paneer Tikka Masala is a beloved Indian dish known for its flavorful and slightly spicy sauce."
       },
       {
         "name": "Vegetable Biryani",
-        "image": "Biryani",
+        "image": "/homepage_images/Vegetable Biryani.jpg",
         "description": "Fragrant vegetarian rice dish with mixed vegetables and spices. Biryani is a classic Indian comfort food, combining the goodness of rice and veggies."
       },
       {
         "name": "Mango Lassi",
-        "image": "Lassi",
+        "image": "/homepage_images/Mango Lassi.jpg",
         "description": "A refreshing vegetarian Indian drink made with yogurt and ripe mangoes. Mango Lassi is a perfect way to cool down on a hot day and enjoy the sweetness of mangoes."
       }
     ]
@@ -44,17 +44,17 @@
     "recipes": [
       {
         "name": "Greek Salad",
-        "image": "Salad",
+        "image": "/homepage_images/Greek Salad.jpg",
         "description": "Classic vegetarian salad with Romaine lettuce, cucumbers, tomatoes, olives, feta cheese, and Greek dressing. The freshness of the ingredients makes this salad delightful."
       },
       {
         "name": "Garlic Bread",
-        "image": "Bread",
+        "image": "/homepage_images/Garlic Bread.jpg",
         "description": "Crispy vegetarian bread with butter and garlic, perfect as a side or snack. Garlic bread is a tasty addition to any meal and pairs well with pasta or salads."
       },
       {
         "name": "Coleslaw",
-        "image": "Coleslaw",
+        "image": "/homepage_images/Coleslaw.jpg",
         "description": "Fresh and crunchy vegetarian salad with shredded cabbage and a creamy dressing. Coleslaw adds a refreshing crunch to your plate, making it an excellent side dish."
       }
     ]
@@ -64,17 +64,17 @@
     "recipes": [
       {
         "name": "Chocolate Chip Cookies",
-        "image": "Cookies",
+        "image": "/homepage_images/Chocolate Chip Cookies.jpg",
         "description": "Homemade vegetarian cookies with chocolate chips, soft on the inside and crispy outside. These cookies are a delightful treat for chocolate lovers of all ages."
       },
       {
         "name": "Cheesecake",
-        "image": "Cheesecake",
+        "image": "/homepage_images/Cheesecake.jpg",
         "description": "Creamy and rich vegetarian dessert with a graham cracker crust and various toppings. Cheesecake is a classic dessert that can be customized with your favorite toppings."
       },
       {
         "name": "Fruit Salad",
-        "image": "FruitSalad",
+        "image": "/homepage_images/Fruit Salad.jpg",
         "description": "Colorful vegetarian mix of fresh fruits served with a sweet syrup. Fruit salad is a healthy and refreshing way to enjoy a variety of fruits in one bowl."
       }
     ]

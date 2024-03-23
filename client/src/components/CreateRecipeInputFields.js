@@ -1,25 +1,59 @@
 "use client";
+import { useState } from "react";
+import { Form, Formik, FieldArray, ErrorMessage } from "formik";
+import { useDispatch, useSelector } from "react-redux";
+import * as Yup from "yup";
+import CreateRecipeAction from "@/redux/actions/CreateRecipeAction";
+import UploadImageFirebase from "./UploadImageFirebase";
 import { CloudUpload, Trash2 } from "lucide-react";
 import AddInput from "./AddInput";
-import "./component_style.css";
-import { Form, Formik, FieldArray } from "formik"; // Added FieldArray for dynamic fields
+
+const validationSchema = Yup.object().shape({
+  recipeImage: Yup.mixed().required("* Please upload an image"),
+  recipeTitle: Yup.string().required("* Please enter a title"),
+  recipeCategory: Yup.string().required("* Please select a category"),
+  recipeCookingTime: Yup.string().required("* Please enter cooking time"),
+  recipeOrigin: Yup.string().required("* Please enter origin"),
+  recipeServing: Yup.string().required("* Please enter serving"),
+  recipeIntroduction: Yup.string().required("* Please enter introduction"),
+  recipeIngredient: Yup.array()
+    .of(Yup.string().required("* Please enter ingredient"))
+    .min(1, "* At least one ingredient is required"),
+  recipeInstructions: Yup.array()
+    .of(Yup.string().required("* Please enter instruction"))
+    .min(1, "* At least one instruction is required"),
+});
+
 export default function CreateRecipeInputFields() {
+  const dispatch = useDispatch();
+  const [resetKey, setResetKey] = useState(0);
+  const { loading, data } = useSelector((state) => state.storeRecipe);
+
+  const handleFormSubmit = async (values, { resetForm }) => {
+    const cloudImageURL = await UploadImageFirebase(values.recipeImage);
+    delete values.recipeImage;
+    values.recipeImage = cloudImageURL;
+    dispatch(CreateRecipeAction(values));
+    resetForm();
+    setResetKey((prevKey) => prevKey + 1);
+  };
   return (
     <div>
       <Formik
+        key={resetKey}
         initialValues={{
           recipeImage: "",
           recipeTitle: "",
           recipeCategory: "",
           recipeIntroduction: "",
           recipeCookingTime: "",
+          recipeOrigin: "",
+          recipeServing: "",
           recipeIngredient: [],
           recipeInstructions: [],
         }}
-        onSubmit={(values) => {
-          // Handle form submission here
-          console.log(values);
-        }}
+        validationSchema={validationSchema}
+        onSubmit={handleFormSubmit}
       >
         {({ values, setFieldValue }) => (
           <Form>
@@ -29,49 +63,99 @@ export default function CreateRecipeInputFields() {
                 <ul className="space-y-5">
                   <li>
                     <label htmlFor="dropzone-file">
-                      <div className="border-2 border-dotted h-[10rem] justify-center items-center text-gray-400 flex flex-col rounded-sm">
-                        <CloudUpload size={30} />
-                        <p class="">
-                          <span class="font-semibold">Click to upload</span> or
-                          drag and drop
-                        </p>
-                      </div>
+                      {values.recipeImage &&
+                      typeof values.recipeImage === "object" ? (
+                        <div className="flex justify-center items-center rounded-sm overflow-auto border-2 active:border-orange-500 h-[20rem]">
+                          <img
+                            src={URL.createObjectURL(values.recipeImage)}
+                            alt=""
+                            className="object-cover"
+                          />
+                        </div>
+                      ) : (
+                        <div className="border-2 active:border-orange-500 border-dotted h-[20rem] justify-center items-center text-gray-400 active:text-orange-500 flex flex-col rounded-sm">
+                          <CloudUpload size={30} />
+                          <p className="">
+                            <span className="font-semibold">
+                              Click to upload
+                            </span>
+                            or drag and drop
+                          </p>
+                        </div>
+                      )}
                       <input
                         id="dropzone-file"
                         type="file"
-                        class="hidden"
+                        className="hidden"
+                        value={values.recipeImage}
                         onChange={(e) =>
                           setFieldValue("recipeImage", e.target.files[0])
                         }
                       />
                     </label>
+                    <div className="text-sm text-red">
+                      <ErrorMessage name="recipeImage" />
+                    </div>
                   </li>
                   <li>
-                    <AddInput label={"Title"} id={"recipeTitle"} />
+                    <AddInput
+                      label={"Title"}
+                      id={"recipeTitle"}
+                      value={values.recipeTitle}
+                    />
                   </li>
                   <li>
-                    {/* <AddInput label={"Category"} id={"recipeCategory"} /> */}
                     <select
                       id="recipeCategory"
                       name="recipeCategory"
                       className="inputfield_css text-gray-400"
+                      value={values.recipeCategory}
+                      onChange={(e) =>
+                        setFieldValue("recipeCategory", e.target.value)
+                      }
                     >
                       <option value="">Select Category</option>
-                      <option value="Breakfast">Breakfast</option>
-                      <option value="Lunch">Lunch</option>
-                      <option value="Dinner">Dinner</option>
-                      <option value="Snack">Snack</option>
-                      <option value="Appetizer">Appetizer</option>
-                      <option value="Salad">Salad</option>
-                      <option value="Soup">Soup</option>
-                      <option value="Main Course">Main Course</option>
-                      <option value="Side Dish">Side Dish</option>
-                      <option value="Dessert">Dessert</option>
-                      <option value="Beverage">Beverage</option>
+                      <option value="breakfast">Breakfast</option>
+                      <option value="lunch">Lunch</option>
+                      <option value="dinner">Dinner</option>
+                      <option value="snack">Snack</option>
+                      <option value="appetizer">Appetizer</option>
+                      <option value="salad">Salad</option>
+                      <option value="soup">Soup</option>
+                      <option value="main_course">Main Course</option>
+                      <option value="side_dish">Side Dish</option>
+                      <option value="dessert">Dessert</option>
+                      <option value="beverage">Beverage</option>
                     </select>
+                    <div className="text-sm text-red">
+                      <ErrorMessage name="recipeCategory" />
+                    </div>
                   </li>
                   <li>
-                    <AddInput label={"Cooking Time"} id={"recipeCookingTime"} />
+                    <AddInput
+                      label={"Cooking Time"}
+                      id={"recipeCookingTime"}
+                      value={values.recipeCookingTime}
+                    />
+                    <div className="text-sm text-red">
+                      <ErrorMessage name="recipeCookingTime" />
+                    </div>
+                  </li>
+                  <li>
+                    <AddInput
+                      label={"Origin"}
+                      id={"recipeOrigin"}
+                      value={values.recipeOrigin}
+                    />
+                    <ErrorMessage name="recipeOrigin" />
+                  </li>
+                  <li>
+                    <AddInput
+                      label={"Serving"}
+                      id={"recipeServing"}
+                      value={values.recipeServing}
+                    />
+                    <ErrorMessage name="recipeServing" />
                   </li>
                   <li>
                     <AddInput
@@ -79,7 +163,9 @@ export default function CreateRecipeInputFields() {
                       label={"Introduction"}
                       id={"recipeIntroduction"}
                       className={"h-[10rem]"}
+                      value={values.recipeIntroduction}
                     />
+                    <ErrorMessage name="recipeCookingTime" />
                   </li>
                 </ul>
               </div>
@@ -116,6 +202,9 @@ export default function CreateRecipeInputFields() {
                             </button>
                           </div>
                         </li>
+                        <div className="text-sm text-red">
+                          <ErrorMessage name="recipeIngredient" />
+                        </div>
                       </ul>
                     )}
                   />
@@ -151,6 +240,9 @@ export default function CreateRecipeInputFields() {
                             </button>
                           </div>
                         </li>
+                        <div className="text-sm text-red">
+                          <ErrorMessage name="recipeInstructions" />
+                        </div>
                       </ul>
                     )}
                   />

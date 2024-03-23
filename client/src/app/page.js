@@ -2,6 +2,7 @@ import { Home_Img } from "@/assets/Images";
 import { AddImage } from "@/components";
 import { Home_Header_Data, Home_Section_Data } from "@/assets/data";
 import { MoveRight } from "lucide-react";
+import Image from "next/image";
 export default function Home() {
   return (
     <div className="">
@@ -31,7 +32,13 @@ export default function Home() {
             <section className="grid grid-cols-3 gap-5">
               {category.recipes.map((item, j) => (
                 <div key={j} className="flex flex-col gap-5">
-                  <div className="h-[300px] w-full bg-black10"></div>
+                  <div className="h-[300px] w-full bg-black10 flex justify-center items-center">
+                    <img
+                      src={item.image}
+                      alt=""
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
                   <div className="text-center text-lg font-bold w-full">
                     {item.name}
                   </div>
