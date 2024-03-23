@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.scrollbar_remover {
+  overflow-y: auto;
+}
+.scrollbar_remover::-webkit-scrollbar {
+  width: 0.4rem;
+}
+.scrollbar_remover::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
