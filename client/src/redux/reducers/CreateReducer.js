@@ -1,12 +1,13 @@
+"use client";
 import { Recipes_Data } from "@/assets/data";
 
-const { createSlice } = require("@reduxjs/toolkit");
+import { createSlice } from "@reduxjs/toolkit";
 
 const CreateReducer = createSlice({
   name: "recipes",
   initialState: {
     loading: false,
-    data: Recipes_Data,
+    data: [],
   },
   reducers: {
     requestCreateRecipe: (state) => {
@@ -17,6 +18,16 @@ const CreateReducer = createSlice({
       state.data.push(action.payload);
     },
     failureCreateRecipe: (state) => {
+      state.loading = false;
+    },
+    requestReadAllRecipes: (state) => {
+      state.loading = true;
+    },
+    successReadAllRecipes: (state, action) => {
+      state.loading = false;
+      state.data = action.payload;
+    },
+    failureReadAllRecipes: (state) => {
       state.loading = false;
     },
     requestEditRecipe: (state) => {
@@ -38,7 +49,9 @@ const CreateReducer = createSlice({
     successDeleteRecipe: (state, action) => {
       state.loading = false;
       const _idDeleteRecipe = action.payload._id;
-      state.data = state.data.filter((recipe) => recipe._id !== deleteId);
+      state.data = state.data.filter(
+        (recipe) => recipe._id !== _idDeleteRecipe
+      );
     },
     failureDeleteRecipe: (state) => {
       state.loading = false;
@@ -53,6 +66,9 @@ export const {
   requestEditRecipe,
   successEditRecipe,
   failureEditRecipe,
+  requestReadAllRecipes,
+  successReadAllRecipes,
+  failureReadAllRecipes,
   requestDeleteRecipe,
   successDeleteRecipe,
   failureDeleteRecipe,

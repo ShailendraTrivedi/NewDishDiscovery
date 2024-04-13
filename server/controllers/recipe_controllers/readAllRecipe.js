@@ -1,5 +1,7 @@
-/** GET: http://localhost:5000/api/get_recipes */
-const getRecipes = async (req, res) => {
+const { RecipeModel } = require("../../models");
+
+/** GET: http://localhost:5000/api/read_all_recipes */
+const readAllRecipe = async (req, res) => {
   try {
     const allRecipes = await RecipeModel.find();
 
@@ -14,4 +16,4 @@ const getRecipes = async (req, res) => {
   }
 };
 
-module.exports = getRecipes;
+module.exports = readAllRecipe;

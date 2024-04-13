@@ -17,15 +17,21 @@ export default function Navbar() {
           <Link href="/discover">
             <li className="">Discover</li>
           </Link>
-          <Link href="/my_cookbook"><li className="">My Cookbook</li></Link>
-          <Link href="/create_recipe"><li className="">Create Recipe</li></Link>
+          <Link href="/my_cookbook">
+            <li className="">My Cookbook</li>
+          </Link>
+          <Link href="/create_recipe">
+            <li className="">Create Recipe</li>
+          </Link>
           <li className="">Logout</li>
-          <li className="">
-            <AddButton
-              className="border-2 border-orange-500"
-              buttonName="Login"
-            />
-          </li>
+          <Link href="/login">
+            <li className="">
+              <AddButton
+                className="border-2 border-orange-500"
+                buttonName="Login"
+              />
+            </li>
+          </Link>
         </ul>
       </div>
     </div>

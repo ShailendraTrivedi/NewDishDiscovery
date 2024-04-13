@@ -10,7 +10,10 @@ module.exports = {
       desktop: "1440px",
     },
     extend: {
-      backgroundImage: { home_img: "url('/home_img.jpg')" },
+      backgroundImage: {
+        home_img: "url('/home_img.jpg')",
+        auth_img: "url('/auth_img.jpg')",
+      },
       colors: {
         red: "#ff0000",
         black50: "rgba(0, 0, 0, 0.5)",

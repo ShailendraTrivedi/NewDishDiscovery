@@ -1,8 +1,16 @@
+"use client";
 import { AnimateTrash } from "@/assets/Images";
+import DeleteRecipeAction from "@/redux/actions/DeleteRecipeAction";
 import { Cross, Trash2, X } from "lucide-react";
 import Image from "next/image";
+import { useDispatch } from "react-redux";
 
-export default function DeleteConfirm({ setShowConfirmDeletePopUp }) {
+export default function DeleteConfirm({ deletedId, setDeletedId }) {
+  const dispatch = useDispatch();
+  const handleDeleteRecipeById = () => {
+    dispatch(DeleteRecipeAction({ _id: deletedId }));
+    setDeletedId(null);
+  };
   return (
     <div className="relative z-50">
       <div className="fixed inset-0 bg-gray-500 bg-opacity-50">
@@ -29,12 +37,15 @@ export default function DeleteConfirm({ setShowConfirmDeletePopUp }) {
               </div>
               <div className="flex gap-10">
                 <button
-                  onClick={() => setShowConfirmDeletePopUp(false)}
+                  onClick={() => setDeletedId(null)}
                   className="flex gap-2 border-2 border-orange-500 w-[15rem] rounded-3xl items-center justify-center p-2"
                 >
                   Cancel
                 </button>
-                <button className="flex gap-2 bg-orange-500 text-white w-[15rem] rounded-3xl items-center justify-center p-2">
+                <button
+                  onClick={() => handleDeleteRecipeById()}
+                  className="flex gap-2 bg-orange-500 text-white w-[15rem] rounded-3xl items-center justify-center p-2"
+                >
                   Delete
                 </button>
               </div>

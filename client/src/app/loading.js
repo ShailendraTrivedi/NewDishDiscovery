@@ -1,11 +1,19 @@
-export default function Loading() {
+import Image from "next/image";
+import { LoadingAnimation } from "@/assets/Images";
+import { AddImage } from "@/components";
+
+export default function Loading({ message }) {
   return (
-    <div>
-      <div class="flex items-center justify-center w-56 h-56 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-        <div class="px-3 py-1 text-xs font-medium leading-none text-center text-blue-800 bg-blue-200 rounded-full animate-pulse dark:bg-blue-900 dark:text-blue-200">
-          loading...
-        </div>
+    <div className="flex flex-col justify-center items-center w-full h-full">
+      <div className="relative w-[10rem] h-[10rem]">
+        <Image
+          alt="Image Not Found"
+          src={LoadingAnimation.src}
+          fill
+          objectFit="cover"
+        />
       </div>
+      <div className="">{message || "Loading..."}</div>
     </div>
   );
 }

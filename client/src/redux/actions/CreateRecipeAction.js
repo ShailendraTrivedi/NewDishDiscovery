@@ -1,3 +1,4 @@
+import api from "@/utils/InterceptorAPI";
 import {
   failureCreateRecipe,
   successCreateRecipe,
@@ -8,7 +9,10 @@ const CreateRecipeAction = (values) => {
   return async (dispatch) => {
     dispatch(requestCreateRecipe());
     try {
-      dispatch(successCreateRecipe(values));
+      const response = await api.post("/api/create_recipe", values);
+      if (response.status === 200) {
+        dispatch(successCreateRecipe(values));
+      }
     } catch (error) {
       dispatch(failureCreateRecipe());
     }

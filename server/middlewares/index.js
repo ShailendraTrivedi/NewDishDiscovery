@@ -4,7 +4,7 @@ const { Router } = express;
 
 const Middleware = Router();
 const middlewareCredentials = {
-  origin: true,
+  origin: "http://localhost:3000",
   credentials: true,
 };
 
