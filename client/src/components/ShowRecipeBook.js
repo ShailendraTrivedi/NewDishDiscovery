@@ -14,13 +14,13 @@ import Image from "next/image";
 import DeleteConfirm from "./DeleteConfirm";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import ReadAllRecipesAction from "@/redux/actions/ReadAllRecipeAction";
 import Loading from "@/app/loading";
+import ReadUserRecipes from "@/redux/actions/ReadUserRecipes";
 
 export default function ShowRecipeBook() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(ReadAllRecipesAction());
+    dispatch(ReadUserRecipes());
   }, [dispatch]);
   const { loading, data } = useSelector((state) => state.storeRecipe);
   console.log({loading, data});

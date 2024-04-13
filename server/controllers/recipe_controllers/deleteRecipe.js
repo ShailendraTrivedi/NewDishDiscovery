@@ -5,7 +5,6 @@ const deleteRecipe = async (req, res) => {
   try {
     const { _id } = req.params;
     const deletedRecipe = await RecipeModel.findByIdAndDelete(_id);
-    console.log(deletedRecipe);
 
     if (!deletedRecipe) {
       return res.status(404).json({ message: "Recipe not found" });

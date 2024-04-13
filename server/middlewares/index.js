@@ -1,10 +1,11 @@
 const express = require("express");
 const cors = require("cors");
+const { ORIGIN_URL } = require("../constant");
 const { Router } = express;
 
 const Middleware = Router();
 const middlewareCredentials = {
-  origin: "http://localhost:3000",
+  origin: ORIGIN_URL,
   credentials: true,
 };
 

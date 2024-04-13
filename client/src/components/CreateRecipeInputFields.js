@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Form, Formik, FieldArray, ErrorMessage } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
@@ -32,9 +32,6 @@ export default function CreateRecipeInputFields() {
   const { loading } = useSelector((state) => state.storeRecipe);
 
   const handleFormSubmit = async (values, { resetForm }) => {
-    const cloudImageURL = await UploadImageFirebase(values.recipeImage);
-    delete values.recipeImage;
-    values.recipeImage = cloudImageURL;
     dispatch(CreateRecipeAction(values));
     resetForm();
     setResetKey((prevKey) => prevKey + 1);
@@ -48,6 +45,7 @@ export default function CreateRecipeInputFields() {
         <Formik
           key={resetKey}
           initialValues={{
+            recipeDiscoveryBy: localStorage.getItem("userName"),
             recipeImage: "",
             recipeTitle: "",
             recipeCategory: "",

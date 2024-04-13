@@ -21,13 +21,19 @@ const createUser = async (req, res) => {
       userEmail,
       userPassword,
     });
+
     const result = await newUser.save();
     const token = setToken(newUser);
     res.cookie("token", token, { maxAge: 1000 * 60 * 60 * 24 * 7 });
 
+    const userDetails = {
+      userName,
+      userEmail,
+    };
+
     return res
       .status(201)
-      .json({ message: "User created successfully", user: result });
+      .json({ message: "User created successfully", userDetails });
   } catch (err) {
     console.error("Error creating user:", err);
     return res

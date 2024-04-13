@@ -3,9 +3,7 @@ const { RecipeModel } = require("../../models");
 /** POST: http://localhost:5000/api/create_recipe */
 const createRecipe = async (req, res) => {
   try {
-    let recipe = req.body;
-    recipe = { ...recipe , recipeDiscoveryBy:"Shailendra"}
-    console.log(recipe);
+    const recipe = req.body;
     const newRecipe = new RecipeModel(recipe);
     const result = await newRecipe.save();
     return res.status(200).json({ message: "Blog Added Successfully" });

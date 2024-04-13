@@ -4,9 +4,11 @@ import AddInput from "./AddInput";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import LoginAction from "@/redux/actions/LoginAction";
+import { useRouter } from "next/navigation";
 
 export default function LoginFields() {
   const dispatch = useDispatch();
+  const router = useRouter()
   return (
     <section>
       <div className=" text-center font-bold py-10 px-2">
@@ -18,8 +20,7 @@ export default function LoginFields() {
           userPassword: "",
         }}
         onSubmit={(values) => {
-          console.log(values);
-          dispatch(LoginAction(values));
+          dispatch(LoginAction(router, values));
         }}
       >
         {(values) => (

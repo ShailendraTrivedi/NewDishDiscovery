@@ -11,3 +11,5 @@ export { default as ReadAllRecipes } from "./ReadAllRecipes";
 
 export { default as LoginFields } from "./LoginFields";
 export { default as RegisterFields } from "./RegisterFields";
+
+export {default as UploadImageFirebase} from "./UploadImageFirebase"

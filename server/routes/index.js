@@ -11,13 +11,15 @@ const {
   deleteUser,
 } = require("../controllers");
 const CheckAuth = require("../middlewares/CheckAuth");
+const readRecipeByUser = require("../controllers/recipe_controllers/readRecipeByUser");
 const Routes = Router();
 
 Routes.get("/read_all_recipes", readAllRecipe);
+Routes.get("/read_recipes_user", CheckAuth, readRecipeByUser);
 Routes.get("/read_recipe/:id", readRecipe);
-Routes.post("/create_recipe", createRecipe);
-Routes.put("/update_recipe", updateRecipe);
-Routes.delete("/delete_recipe/:_id", deleteRecipe);
+Routes.post("/create_recipe", CheckAuth, createRecipe);
+Routes.put("/update_recipe", CheckAuth, updateRecipe);
+Routes.delete("/delete_recipe/:_id", CheckAuth, deleteRecipe);
 
 Routes.post("/create_user", createUser);
 Routes.post("/read_user", readUser);
