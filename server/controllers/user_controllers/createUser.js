@@ -24,7 +24,11 @@ const createUser = async (req, res) => {
 
     const result = await newUser.save();
     const token = setToken(newUser);
-    res.cookie("token", token, { maxAge: 1000 * 60 * 60 * 24 * 7 });
+    res.cookie("token", token, {
+      maxAge: 1000 * 60 * 60 * 24 * 7,
+      sameSite: "none",
+      secure: true,
+    });
 
     const userDetails = {
       userName,

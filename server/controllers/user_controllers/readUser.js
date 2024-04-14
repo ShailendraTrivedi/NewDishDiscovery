@@ -23,7 +23,11 @@ const readUser = async (req, res) => {
       userEmail: user.userEmail,
     };
     const token = setToken(user);
-    res.cookie("token", token, { maxAge: 1000 * 60 * 60 * 24 * 7 });
+    res.cookie("token", token, {
+      maxAge: 1000 * 60 * 60 * 24 * 7,
+      sameSite: "none",
+      secure: true,
+    });
     return res.status(200).json({ message: "Login successful", userDetails });
   } catch (error) {
     console.error(error);
