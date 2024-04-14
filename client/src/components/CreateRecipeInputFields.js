@@ -45,7 +45,6 @@ export default function CreateRecipeInputFields() {
         <Formik
           key={resetKey}
           initialValues={{
-            recipeDiscoveryBy: localStorage.getItem("userName"),
             recipeImage: "",
             recipeTitle: "",
             recipeCategory: "",

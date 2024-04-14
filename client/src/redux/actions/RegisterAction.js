@@ -9,13 +9,11 @@ const RegisterAction = (router, values) => {
     try {
       const response = await api.post("api/create_user", values);
       if (response.status === 201) {
-        console.log(response.data.userDetails);
         dispatch(successAuth(response.data.userDetails));
         router.push("/")
       }
     } catch (error) {
       dispatch(failureAuth())
-      console.log(error);
     }
   };
 };

@@ -18,7 +18,6 @@ export default function RegisterFields() {
           confirmPassword: "",
         }}
         onSubmit={(values) => {
-          console.log(values);
           dispatch(RegisterAction(router, values));
         }}
       >

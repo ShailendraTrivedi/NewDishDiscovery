@@ -14,10 +14,6 @@ const SearchRecipesAction = (searchRecipe) => {
         `/api/search_recipe/${searchRecipe}`
       );
       if (response.status === 200) {
-        console.log(
-          `🚀 ~ file: SearchRecipesAction.js:11 ~ return ~ response:\n =>`,
-          response
-        );
         dispatch(successSearchRecipes(response.data));
       }
     } catch (error) {
