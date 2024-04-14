@@ -6,7 +6,7 @@ const ReadAllRecipesAction = (values) => {
   return async (dispatch) => {
     dispatch(requestReadAllRecipes());
     try {
-      const response = await axios.get("http://localhost:5000/api/read_all_recipes");
+      const response = await api.get("/api/read_all_recipes");
       if (response.status === 200) {
         dispatch(successReadAllRecipes(response.data));
       }

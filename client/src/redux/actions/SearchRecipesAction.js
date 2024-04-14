@@ -10,8 +10,8 @@ const SearchRecipesAction = (searchRecipe) => {
   return async (dispatch) => {
     dispatch(requestSearchRecipes());
     try {
-      const response = await axios.get(
-        `http://localhost:5000/api/search_recipe/${searchRecipe}`
+      const response = await api.get(
+        `/api/search_recipe/${searchRecipe}`
       );
       if (response.status === 200) {
         console.log(
