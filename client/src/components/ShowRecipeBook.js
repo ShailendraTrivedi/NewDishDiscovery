@@ -22,8 +22,8 @@ export default function ShowRecipeBook() {
   useEffect(() => {
     dispatch(ReadUserRecipes());
   }, [dispatch]);
-  const { loading, data } = useSelector((state) => state.storeRecipe);
-  console.log({loading, data});
+  const { loading, data } = useSelector((state) => state.storeCookbook);
+  console.log({ loading, data });
   const [deletedId, setDeletedId] = useState(null);
 
   const handleDeleteRecipe = (_id) => {
@@ -89,64 +89,72 @@ export default function ShowRecipeBook() {
                 <th></th>
               </tr>
             </thead>
-            <tbody>
-              {data?.map((recipe, i) => (
-                <tr key={i}>
-                  <td>
-                    <div className="flex justify-center items-center p-2">
-                      <div className="relative bg-black10 w-[80px] h-[80px]">
-                        <Image
-                          alt="Image Not Found !"
-                          fill
-                          objectFit="cover"
-                          src={recipe.recipeImage}
-                          loader={() => recipe.recipeImage}
+            {data.length > 0 ? (
+              <tbody>
+                {data?.map((recipe, i) => (
+                  <tr key={i}>
+                    <td>
+                      <div className="flex justify-center items-center p-2">
+                        <div className="relative bg-black10 w-[80px] h-[80px]">
+                          <Image
+                            alt="Image Not Found !"
+                            fill
+                            objectFit="cover"
+                            src={recipe.recipeImage}
+                            loader={() => recipe.recipeImage}
+                          />
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div className="flex justify-center items-center p-2">
+                        {recipe.recipeTitle}
+                      </div>
+                    </td>
+                    <td>
+                      <div className="flex justify-center items-center p-2">
+                        23 March, 2024
+                      </div>
+                    </td>
+                    <td>
+                      <div className="flex justify-center items-center p-2">
+                        {recipe.recipeCategory}
+                      </div>
+                    </td>
+                    <td>
+                      <div className="flex justify-center items-center p-2">
+                        {recipe.recipeCookingTime}
+                      </div>
+                    </td>
+                    <td>
+                      <div className="flex justify-center items-center p-2">
+                        {recipe.recipeLikes}
+                      </div>
+                    </td>
+                    <td>
+                      <div className="flex justify-center items-center p-2">
+                        {recipe.recipeComments?.length}
+                      </div>
+                    </td>
+                    <td>
+                      <div className="flex justify-between items-center p-2 w-full">
+                        <Pencil className="cursor-pointer" />
+                        <Trash
+                          className="cursor-pointer"
+                          onClick={() => handleDeleteRecipe(recipe._id)}
                         />
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div className="flex justify-center items-center p-2">
-                      {recipe.recipeTitle}
-                    </div>
-                  </td>
-                  <td>
-                    <div className="flex justify-center items-center p-2">
-                      23 March, 2024
-                    </div>
-                  </td>
-                  <td>
-                    <div className="flex justify-center items-center p-2">
-                      {recipe.recipeCategory}
-                    </div>
-                  </td>
-                  <td>
-                    <div className="flex justify-center items-center p-2">
-                      {recipe.recipeCookingTime}
-                    </div>
-                  </td>
-                  <td>
-                    <div className="flex justify-center items-center p-2">
-                      {recipe.recipeLikes}
-                    </div>
-                  </td>
-                  <td>
-                    <div className="flex justify-center items-center p-2">
-                      {recipe.recipeComments?.length}
-                    </div>
-                  </td>
-                  <td>
-                    <div className="flex justify-between items-center p-2 w-full">
-                      <Pencil className="cursor-pointer" />
-                      <Trash
-                        className="cursor-pointer"
-                        onClick={() => handleDeleteRecipe(recipe._id)}
-                      />
-                    </div>
-                  </td>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            ) : (
+              <tbody>
+                <tr>
+                  <td colSpan={7} className="p-10 text-center w-full">No Recipe Found</td>
                 </tr>
-              ))}
-            </tbody>
+              </tbody>
+            )}
           </table>
         </div>
       )}

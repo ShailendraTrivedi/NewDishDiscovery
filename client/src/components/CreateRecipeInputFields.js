@@ -29,7 +29,7 @@ const validationSchema = Yup.object().shape({
 export default function CreateRecipeInputFields() {
   const dispatch = useDispatch();
   const [resetKey, setResetKey] = useState(0);
-  const { loading } = useSelector((state) => state.storeRecipe);
+  const { loading } = useSelector((state) => state.storeCookbook);
 
   const handleFormSubmit = async (values, { resetForm }) => {
     dispatch(CreateRecipeAction(values));

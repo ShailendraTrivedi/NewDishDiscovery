@@ -3,7 +3,7 @@ import {
   failureDeleteRecipe,
   requestDeleteRecipe,
   successDeleteRecipe,
-} from "../reducers/CreateReducer";
+} from "../reducers/UserRecipeReducer";
 
 const DeleteRecipeAction = (values) => {
   return async (dispatch) => {

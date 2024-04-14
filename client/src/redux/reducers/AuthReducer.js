@@ -26,6 +26,8 @@ const AuthReducer = createSlice({
     },
     logoutAuth: (state) => {
       state.auth = false;
+      state.loading = false;
+      state.data = null;
     },
   },
 });

@@ -1,7 +1,7 @@
 const {
   failureEditRecipe,
   requestEditRecipe,
-} = require("../reducers/CreateReducer");
+} = require("../reducers/UserRecipeReducer");
 
 const EditRecipeAction = (values) => {
   return async (dispatch) => {

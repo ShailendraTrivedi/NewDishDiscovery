@@ -8,14 +8,22 @@ import { useDispatch, useSelector } from "react-redux";
 import AddImage from "./AddImage";
 import Image from "next/image";
 import Loading from "@/app/loading";
+import SearchRecipesAction from "@/redux/actions/SearchRecipesAction";
 
-export default function ReadAllRecipes() {
+export default function ReadAllRecipes({ searchRecipe }) {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (searchRecipe) {
+      dispatch(SearchRecipesAction(searchRecipe));
+    }
+  }, [searchRecipe]);
+
   useEffect(() => {
     dispatch(ReadAllRecipesAction());
   }, [dispatch]);
 
-  const { loading, data } = useSelector((state) => state.storeRecipe);
+  const { loading, data } = useSelector((state) => state.storeRecipes);
 
   return (
     <div>

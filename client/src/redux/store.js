@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import CreateReducer from "./reducers/CreateReducer";
+import AllRecipeReducer from "./reducers/AllRecipeReducer";
 import AuthReducer from "./reducers/AuthReducer";
+import UserRecipeReducer from "./reducers/UserRecipeReducer";
 
 const store = configureStore({
   reducer: {
-    storeRecipe: CreateReducer,
+    storeRecipes: AllRecipeReducer,
+    storeCookbook: UserRecipeReducer,
     storeAuth: AuthReducer,
   },
 });

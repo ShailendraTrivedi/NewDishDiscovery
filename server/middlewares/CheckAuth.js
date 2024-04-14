@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 async function CheckAuth(req, res, next) {
   try {
     const token = req.headers.authorization;
-
+    
     if (!token) {
       return res.status(401).json({ error: "Authorization token missing" });
     }

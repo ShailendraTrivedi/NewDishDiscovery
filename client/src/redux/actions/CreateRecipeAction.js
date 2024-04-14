@@ -1,10 +1,6 @@
 import api from "@/utils/InterceptorAPI";
-import {
-  failureCreateRecipe,
-  successCreateRecipe,
-  requestCreateRecipe,
-} from "../reducers/CreateReducer";
 import { UploadImageFirebase } from "@/components";
+import { failureCreateRecipe, requestCreateRecipe, successCreateRecipe } from "../reducers/UserRecipeReducer";
 
 const CreateRecipeAction = (values) => {
   return async (dispatch) => {

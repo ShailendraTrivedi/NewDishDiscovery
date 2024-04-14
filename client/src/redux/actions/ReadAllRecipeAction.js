@@ -1,10 +1,6 @@
 import api from "@/utils/InterceptorAPI";
-import {
-  requestReadAllRecipes,
-  successReadAllRecipes,
-  failureReadAllRecipes,
-} from "../reducers/CreateReducer";
 import axios from "axios";
+import { failureReadAllRecipes, requestReadAllRecipes, successReadAllRecipes } from "../reducers/AllRecipeReducer";
 
 const ReadAllRecipesAction = (values) => {
   return async (dispatch) => {

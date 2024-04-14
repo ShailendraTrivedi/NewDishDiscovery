@@ -3,7 +3,7 @@ import { Recipes_Data } from "@/assets/data";
 
 import { createSlice } from "@reduxjs/toolkit";
 
-const CreateReducer = createSlice({
+const UserRecipeReducer = createSlice({
   name: "recipes",
   initialState: {
     loading: false,
@@ -20,14 +20,14 @@ const CreateReducer = createSlice({
     failureCreateRecipe: (state) => {
       state.loading = false;
     },
-    requestReadAllRecipes: (state) => {
+    requestReadRecipes: (state) => {
       state.loading = true;
     },
-    successReadAllRecipes: (state, action) => {
+    successReadRecipes: (state, action) => {
       state.loading = false;
       state.data = action.payload;
     },
-    failureReadAllRecipes: (state) => {
+    failureReadRecipes: (state) => {
       state.loading = false;
     },
     requestEditRecipe: (state) => {
@@ -56,6 +56,7 @@ const CreateReducer = createSlice({
     failureDeleteRecipe: (state) => {
       state.loading = false;
     },
+    
   },
 });
 
@@ -66,11 +67,11 @@ export const {
   requestEditRecipe,
   successEditRecipe,
   failureEditRecipe,
-  requestReadAllRecipes,
-  successReadAllRecipes,
-  failureReadAllRecipes,
+  requestReadRecipes,
+  successReadRecipes,
+  failureReadRecipes,
   requestDeleteRecipe,
   successDeleteRecipe,
   failureDeleteRecipe,
-} = CreateReducer.actions;
-export default CreateReducer.reducer;
+} = UserRecipeReducer.actions;
+export default UserRecipeReducer.reducer;
