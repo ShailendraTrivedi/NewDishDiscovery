@@ -23,7 +23,6 @@ export default function ShowRecipeBook() {
     dispatch(ReadUserRecipes());
   }, [dispatch]);
   const { loading, data } = useSelector((state) => state.storeCookbook);
-  console.log({ loading, data });
   const [deletedId, setDeletedId] = useState(null);
 
   const handleDeleteRecipe = (_id) => {

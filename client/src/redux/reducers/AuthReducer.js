@@ -1,13 +1,12 @@
 "use client";
 
 import { createSlice } from "@reduxjs/toolkit";
-
+const isBrowser = typeof window !== "undefined";
 const AuthReducer = createSlice({
   name: "auth",
   initialState: {
     auth: false,
     loading: false,
-    data: null,
   },
   reducers: {
     requestAuth: (state) => {
@@ -16,10 +15,9 @@ const AuthReducer = createSlice({
     successAuth: (state, action) => {
       state.auth = true;
       state.loading = false;
-      state.data = action.payload;
-      localStorage.setItem("auth", true);
-      localStorage.setItem("userName", state.data.userName);
-      localStorage.setItem("userEmail", state.data.userEmail);
+      if (isBrowser) {
+        localStorage.setItem("auth", true);
+      }
     },
     failureAuth: (state) => {
       state.loading = false;
@@ -27,7 +25,6 @@ const AuthReducer = createSlice({
     logoutAuth: (state) => {
       state.auth = false;
       state.loading = false;
-      state.data = null;
     },
   },
 });

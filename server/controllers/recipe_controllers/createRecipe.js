@@ -4,6 +4,7 @@ const { RecipeModel } = require("../../models");
 const createRecipe = async (req, res) => {
   try {
     const recipe = req.body;
+    recipe = {...recipe, recipeDiscoveryBy: req.userDetails.userName}
     const newRecipe = new RecipeModel(recipe);
     const result = await newRecipe.save();
     return res.status(200).json({ message: "Blog Added Successfully" });

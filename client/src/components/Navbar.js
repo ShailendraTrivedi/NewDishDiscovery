@@ -7,17 +7,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import { logoutAuth } from "@/redux/reducers/AuthReducer";
 import Cookies from "js-cookie";
+const isBrowser = typeof window !== "undefined";
 
 export default function Navbar() {
   const dispatch = useDispatch();
   const auth =
-    useSelector((state) => state.storeAuth.auth) ||
-    localStorage.getItem("auth");
+    isBrowser &&
+    (useSelector((state) => state.storeAuth.auth) ||
+      localStorage.getItem("auth"));
+
   const router = useRouter();
   const handleLogout = () => {
-    dispatch(logoutAuth())
-    localStorage.clear();
-    Cookies.remove("token")
+    dispatch(logoutAuth());
+    if (isBrowser) {
+      localStorage.clear();
+    }
+    Cookies.remove("token");
     router.push("/");
   };
 
