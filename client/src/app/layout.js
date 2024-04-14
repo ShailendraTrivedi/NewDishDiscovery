@@ -1,5 +1,6 @@
 import { Footer, Navbar } from "@/components";
 import "./globals.css";
+import ConfigureRedux from "@/redux/ConfigureRedux";
 
 export const metadata = {
   title: "Create Next App",
@@ -13,9 +14,11 @@ export default function RootLayout({ children }) {
         className="desktop:w-full w-[1440px]"
         suppressHydrationWarning={true}
       >
-        <Navbar />
-        <div className="min-h-screen">{children}</div>
-        <Footer />
+        <ConfigureRedux>
+          <Navbar />
+          <div className="min-h-screen">{children}</div>
+          <Footer />
+        </ConfigureRedux>
       </body>
     </html>
   );

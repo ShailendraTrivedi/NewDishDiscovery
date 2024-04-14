@@ -1,0 +1,269 @@
+[
+  {
+    "recipeDiscoveryBy": "Chef A",
+    "recipeImage": "https://firebasestorage.googleapis.com/v0/b/images-30dfd.appspot.com/o/DishDiscovery%2FVegetarian%20Pasta.jpg?alt=media&token=d0636da6-b646-40dc-a697-cb91268c2de9",
+    "recipeTitle": "Vegetarian Pasta",
+    "recipeCategory": "Pasta",
+    "recipeIntroduction": "Delicious vegetarian pasta dish.",
+    "recipeCookingTime": "30 minutes",
+    "recipeOrigin": "Italian",
+    "recipeServing": "4",
+    "recipeIngredient": [
+      "Pasta",
+      "Tomatoes",
+      "Basil",
+      "Olive Oil",
+      "Garlic",
+      "Salt",
+      "Black Pepper"
+    ],
+    "recipeInstructions": [
+      "Cook pasta according to package instructions.",
+      "In a pan, heat olive oil and sauté garlic until fragrant.",
+      "Add chopped tomatoes, basil, salt, and pepper. Cook until tomatoes are soft.",
+      "Combine cooked pasta with tomato mixture. Serve hot."
+    ]
+  },
+  {
+    "recipeDiscoveryBy": "Chef B",
+    "recipeImage": "https://firebasestorage.googleapis.com/v0/b/images-30dfd.appspot.com/o/DishDiscovery%2FVegetable%20Stir%20Fry.jpg?alt=media&token=efc01abc-fde1-4b68-810f-02098ecd923f",
+    "recipeTitle": "Vegetable Stir Fry",
+    "recipeCategory": "Stir Fry",
+    "recipeIntroduction": "Healthy and tasty vegetable stir fry.",
+    "recipeCookingTime": "20 minutes",
+    "recipeOrigin": "Asian",
+    "recipeServing": "2",
+    "recipeIngredient": [
+      "Assorted Vegetables (Broccoli, Bell Peppers, Carrots, Mushrooms, etc.)",
+      "Soy Sauce",
+      "Sesame Oil",
+      "Ginger",
+      "Garlic",
+      "Cornstarch",
+      "Salt",
+      "Black Pepper"
+    ],
+    "recipeInstructions": [
+      "Cut vegetables into bite-sized pieces.",
+      "In a wok, heat sesame oil and stir-fry ginger and garlic until fragrant.",
+      "Add vegetables and cook until tender-crisp.",
+      "In a small bowl, mix soy sauce, cornstarch, salt, and pepper. Pour over vegetables and cook until sauce thickens.",
+      "Serve hot with rice."
+    ]
+  },
+  {
+    "recipeDiscoveryBy": "Chef C",
+    "recipeImage": "https://firebasestorage.googleapis.com/v0/b/images-30dfd.appspot.com/o/DishDiscovery%2FCaprese%20Salad.jpg?alt=media&token=06ff2225-a7e5-4387-a958-63e2a73fec51",
+    "recipeTitle": "Caprese Salad",
+    "recipeCategory": "Salad",
+    "recipeIntroduction": "Classic Italian salad with fresh ingredients.",
+    "recipeCookingTime": "10 minutes",
+    "recipeOrigin": "Italian",
+    "recipeServing": "2",
+    "recipeIngredient": [
+      "Fresh Mozzarella Cheese",
+      "Tomatoes",
+      "Fresh Basil Leaves",
+      "Balsamic Vinegar",
+      "Extra Virgin Olive Oil",
+      "Salt",
+      "Black Pepper"
+    ],
+    "recipeInstructions": [
+      "Slice mozzarella cheese and tomatoes into equal-sized slices.",
+      "Arrange cheese, tomatoes, and basil leaves on a plate.",
+      "Drizzle with balsamic vinegar and olive oil.",
+      "Season with salt and pepper to taste.",
+      "Serve immediately."
+    ]
+  },
+  {
+    "recipeDiscoveryBy": "Chef D",
+    "recipeImage": "https://firebasestorage.googleapis.com/v0/b/images-30dfd.appspot.com/o/DishDiscovery%2FVegetarian%20Pizza.jpg?alt=media&token=ce4421fb-0513-425a-8471-48de1e0a693f",
+    "recipeTitle": "Vegetarian Pizza",
+    "recipeCategory": "Pizza",
+    "recipeIntroduction": "Homemade vegetarian pizza with a crispy crust.",
+    "recipeCookingTime": "40 minutes",
+    "recipeOrigin": "Italian",
+    "recipeServing": "2",
+    "recipeIngredient": [
+      "Pizza Dough",
+      "Tomato Sauce",
+      "Mozzarella Cheese",
+      "Assorted Vegetables (Bell Peppers, Mushrooms, Olives, etc.)",
+      "Fresh Basil Leaves",
+      "Olive Oil",
+      "Salt",
+      "Black Pepper"
+    ],
+    "recipeInstructions": [
+      "Preheat oven to 450°F (230°C).",
+      "Roll out pizza dough on a floured surface to desired thickness.",
+      "Spread tomato sauce evenly over the dough.",
+      "Top with shredded mozzarella cheese and assorted vegetables.",
+      "Drizzle with olive oil and season with salt and pepper.",
+      "Bake in the preheated oven for 15-20 minutes, or until crust is golden brown and cheese is melted.",
+      "Garnish with fresh basil leaves before serving."
+    ]
+  },
+  {
+    "recipeDiscoveryBy": "Chef E",
+    "recipeImage": "https://firebasestorage.googleapis.com/v0/b/images-30dfd.appspot.com/o/DishDiscovery%2FVegetable%20Curry.jpg?alt=media&token=8f1edd07-d75f-43db-adfa-941b5b65c4ec",
+    "recipeTitle": "Vegetable Curry",
+    "recipeCategory": "Curry",
+    "recipeIntroduction": "Flavorful vegetarian curry with a blend of spices.",
+    "recipeCookingTime": "45 minutes",
+    "recipeOrigin": "Indian",
+    "recipeServing": "4",
+    "recipeIngredient": [
+      "Assorted Vegetables (Potatoes, Cauliflower, Peas, Carrots, etc.)",
+      "Onion",
+      "Tomatoes",
+      "Ginger-Garlic Paste",
+      "Turmeric Powder",
+      "Coriander Powder",
+      "Cumin Powder",
+      "Garam Masala",
+      "Coconut Milk",
+      "Oil",
+      "Salt"
+    ],
+    "recipeInstructions": [
+      "Heat oil in a pan and sauté chopped onions until golden brown.",
+      "Add ginger-garlic paste and cook until fragrant.",
+      "Add chopped tomatoes and cook until soft.",
+      "Add turmeric powder, coriander powder, cumin powder, and garam masala. Cook for a few minutes.",
+      "Add chopped vegetables and mix well.",
+      "Pour in coconut milk and season with salt.",
+      "Cover and cook until vegetables are tender.",
+      "Serve hot with rice or bread."
+    ]
+  },
+  {
+    "recipeDiscoveryBy": "Chef F",
+    "recipeImage": "https://firebasestorage.googleapis.com/v0/b/images-30dfd.appspot.com/o/DishDiscovery%2FVegetarian%20Chili.jpg?alt=media&token=df5aa553-c6b9-45d7-819e-067f94435e53",
+    "recipeTitle": "Vegetarian Chili",
+    "recipeCategory": "Chili",
+    "recipeIntroduction": "Hearty and spicy vegetarian chili packed with beans and vegetables.",
+    "recipeCookingTime": "1 hour",
+    "recipeOrigin": "American",
+    "recipeServing": "6",
+    "recipeIngredient": [
+      "Kidney Beans",
+      "Black Beans",
+      "Tomatoes",
+      "Bell Peppers",
+      "Onion",
+      "Garlic",
+      "Chili Powder",
+      "Cumin Powder",
+      "Paprika",
+      "Vegetable Broth",
+      "Olive Oil",
+      "Salt",
+      "Black Pepper"
+    ],
+    "recipeInstructions": [
+      "Heat olive oil in a large pot over medium heat.",
+      "Add chopped onions, bell peppers, and garlic. Cook until softened.",
+      "Stir in chili powder, cumin powder, and paprika. Cook for 1-2 minutes.",
+      "Add chopped tomatoes, kidney beans, black beans, and vegetable broth.",
+      "Bring to a boil, then reduce heat and simmer for 30-40 minutes.",
+      "Season with salt and pepper to taste.",
+      "Serve hot with toppings like sour cream, shredded cheese, and chopped cilantro."
+    ]
+  },
+  {
+    "recipeDiscoveryBy": "Chef G",
+    "recipeImage": "https://firebasestorage.googleapis.com/v0/b/images-30dfd.appspot.com/o/DishDiscovery%2FVegetarian%20Sushi%20Rolls.jpg?alt=media&token=337c526d-1bf4-46b8-a3e4-c55d3f52cb5b",
+    "recipeTitle": "Vegetarian Sushi Rolls",
+    "recipeCategory": "Sushi",
+    "recipeIntroduction": "Homemade vegetarian sushi rolls filled with fresh vegetables.",
+    "recipeCookingTime": "45 minutes",
+    "recipeOrigin": "Japanese",
+    "recipeServing": "4",
+    "recipeIngredient": [
+      "Sushi Rice",
+      "Nori Sheets",
+      "Cucumber",
+      "Avocado",
+      "Carrots",
+      "Bell Peppers",
+      "Soy Sauce",
+      "Wasabi",
+      "Pickled Ginger"
+    ],
+    "recipeInstructions": [
+      "Cook sushi rice according to package instructions.",
+      "Place a nori sheet on a bamboo sushi mat.",
+      "Spread cooked rice evenly over the nori sheet, leaving a small border along the edges.",
+      "Arrange sliced vegetables (cucumber, avocado, carrots, bell peppers) in the center of the rice.",
+      "Roll the sushi tightly using the bamboo mat, sealing the edge with a little water.",
+      "Slice the sushi roll into bite-sized pieces using a sharp knife.",
+      "Serve with soy sauce, wasabi, and pickled ginger."
+    ]
+  },
+  {
+    "recipeDiscoveryBy": "Chef H",
+    "recipeImage": "https://firebasestorage.googleapis.com/v0/b/images-30dfd.appspot.com/o/DishDiscovery%2FVegetarian%20Tacos.jpg?alt=media&token=5609bdec-bba6-452f-be9a-c06be7681fcd",
+    "recipeTitle": "Vegetarian Tacos",
+    "recipeCategory": "Tacos",
+    "recipeIntroduction": "Delicious vegetarian tacos filled with beans and vegetables.",
+    "recipeCookingTime": "30 minutes",
+    "recipeOrigin": "Mexican",
+    "recipeServing": "4",
+    "recipeIngredient": [
+      "Corn Tortillas",
+      "Black Beans",
+      "Corn",
+      "Bell Peppers",
+      "Onion",
+      "Tomatoes",
+      "Lettuce",
+      "Cilantro",
+      "Lime",
+      "Sour Cream",
+      "Salsa"
+    ],
+    "recipeInstructions": [
+      "Heat corn tortillas in a skillet until warm and pliable.",
+      "Fill each tortilla with black beans, corn, chopped bell peppers, onions, tomatoes, lettuce, and cilantro.",
+      "Squeeze lime juice over the filling and top with sour cream and salsa.",
+      "Fold the tortillas and serve immediately."
+    ]
+  },
+  {
+    "recipeDiscoveryBy": "Chef I",
+    "recipeImage": "https://firebasestorage.googleapis.com/v0/b/images-30dfd.appspot.com/o/DishDiscovery%2FVegetarian%20Pad%20Thai.jpg?alt=media&token=2a8eefde-a20c-4809-9a28-6ca011484e69",
+    "recipeTitle": "Vegetarian Pad Thai",
+    "recipeCategory": "Noodles",
+    "recipeIntroduction": "Authentic vegetarian Pad Thai with rice noodles and tofu.",
+    "recipeCookingTime": "30 minutes",
+    "recipeOrigin": "Thai",
+    "recipeServing": "2",
+    "recipeIngredient": [
+      "Rice Noodles",
+      "Tofu",
+      "Bean Sprouts",
+      "Egg",
+      "Green Onions",
+      "Garlic",
+      "Peanuts",
+      "Soy Sauce",
+      "Tamarind Paste",
+      "Brown Sugar",
+      "Lime",
+      "Vegetable Oil"
+    ],
+    "recipeInstructions": [
+      "Soak rice noodles in warm water until softened, then drain.",
+      "Heat vegetable oil in a wok or large skillet over medium heat.",
+      "Add minced garlic and tofu cubes. Cook until tofu is golden brown.",
+      "Push tofu to the side and crack an egg into the skillet. Scramble until cooked.",
+      "Add drained noodles, bean sprouts, chopped green onions, and chopped peanuts to the skillet.",
+      "In a small bowl, mix soy sauce, tamarind paste, brown sugar, and lime juice. Pour over the noodles.",
+      "Stir-fry everything together until well combined and heated through.",
+      "Serve hot, garnished with additional peanuts and lime wedges."
+    ]
+  }
+]
