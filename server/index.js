@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const { PORT } = require("./constant");
+const { PORT, MONGOS_URL } = require("./constant");
 const Routers = require("./routes");
 const Middleware = require("./middlewares");
 const app = express();
@@ -15,7 +15,7 @@ app.use("/api", Routers);
 // ! ------------------------------ Database and Server Connection ------------------------------
 
 mongoose
-  .connect("mongodb://localhost:27017/DishDiscovery")
+  .connect(MONGOS_URL)
   .then((result) => {
     console.log("MongoDB connection established");
   })
