@@ -3,7 +3,7 @@ const { RecipeModel } = require("../../models");
 /** POST: http://localhost:5000/api/create_recipe */
 const createRecipe = async (req, res) => {
   try {
-    const recipe = req.body;
+    let recipe = req.body;
     recipe = {...recipe, recipeDiscoveryBy: req.userDetails.userName}
     const newRecipe = new RecipeModel(recipe);
     const result = await newRecipe.save();
